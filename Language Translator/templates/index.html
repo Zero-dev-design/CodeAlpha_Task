@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Language Translator</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <div class="translator-card">
+
+        <h1>🌍 AI Language Translator</h1>
+
+        <form method="POST">
+
+            <div class="language-section">
+
+                <div class="language-box">
+
+                    <label>From</label>
+
+                    <select name="source_language">
+
+                        {% for language, code in languages.items() %}
+
+                        <option value="{{ code }}"
+                        {% if code == source_lang %}selected{% endif %}>
+
+                            {{ language }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="swap-btn"
+                    onclick="swapLanguages()">
+
+                    ⇄
+
+                </button>
+
+                <div class="language-box">
+
+                    <label>To</label>
+
+                    <select name="target_language">
+
+                        {% for language, code in languages.items() %}
+
+                        <option value="{{ code }}"
+                        {% if code == target_lang %}selected{% endif %}>
+
+                            {{ language }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="text-area-section">
+
+                <textarea
+                    name="text"
+                    placeholder="Enter your text here..."
+                    required>{{ original_text }}</textarea>
+
+            </div>
+
+            <button class="translate-btn" type="submit">
+
+                Translate
+
+            </button>
+
+        </form>
+
+        {% if translated_text %}
+
+        <div class="result-box">
+
+            <h2>Translated Result</h2>
+
+            <p id="translatedText">
+
+                {{ translated_text }}
+
+            </p>
+
+            <div class="action-buttons">
+
+    <button onclick="copyText()">
+
+        Copy
+
+    </button>
+
+    <button id="speakBtn" onclick="playAudio()">
+
+        Speak
+
+    </button>
+
+    <button
+        id="stopBtn"
+        onclick="stopAudio()">
+
+        Pause
+
+    </button>
+
+    <button
+        id="restartBtn"
+        onclick="restartAudio()">
+
+        Restart
+
+    </button>
+
+</div>
+
+<p id="loadingText"></p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+
+let currentAudio = null;
+
+let isPaused = false;
+
+async function playAudio() {
+
+    const speakButton =
+    document.getElementById("speakBtn");
+
+    const stopButton =
+    document.getElementById("stopBtn");
+
+    const restartButton =
+    document.getElementById("restartBtn");
+
+    const loadingText =
+    document.getElementById("loadingText");
+
+    // If paused → continue instead of recompiling
+    if(currentAudio && isPaused) {
+
+        currentAudio.play();
+
+        isPaused = false;
+
+        stopButton.innerText = "Pause";
+
+        return;
+    }
+
+    // If already playing → do nothing
+    if(currentAudio && !currentAudio.paused) {
+
+        return;
+    }
+
+    speakButton.disabled = true;
+
+    loadingText.style.display = "block";
+
+    loadingText.innerText =
+    "Generating voice... Please wait 2-5 seconds";
+
+    try {
+
+        const response =
+        await fetch('/speak');
+
+        const blob =
+        await response.blob();
+
+        const audioURL =
+        URL.createObjectURL(blob);
+
+        currentAudio =
+        new Audio(audioURL);
+
+        currentAudio.onloadeddata = () => {
+
+            loadingText.style.display = "none";
+
+            stopButton.style.display = "inline-block";
+
+            restartButton.style.display = "inline-block";
+
+            stopButton.innerText = "Pause";
+
+            currentAudio.play();
+        };
+
+        currentAudio.onended = () => {
+
+            resetAudioUI();
+        };
+
+    } catch(error) {
+
+        loadingText.innerText =
+        "Error generating speech";
+
+        speakButton.disabled = false;
+    }
+}
+
+function stopAudio() {
+
+    const stopButton =
+    document.getElementById("stopBtn");
+
+    if(currentAudio) {
+
+        // If audio is playing → pause it
+        if(!currentAudio.paused) {
+
+            currentAudio.pause();
+
+            isPaused = true;
+
+            stopButton.innerText = "Continue";
+        }
+
+        // If already paused → continue it
+        else {
+
+            currentAudio.play();
+
+            isPaused = false;
+
+            stopButton.innerText = "Pause";
+        }
+    }
+}
+
+function restartAudio() {
+
+    if(currentAudio) {
+
+        currentAudio.currentTime = 0;
+
+        currentAudio.play();
+
+        isPaused = false;
+
+        document.getElementById(
+            "stopBtn"
+        ).innerText = "Pause";
+    }
+}
+
+function resetAudioUI() {
+
+    const speakButton =
+    document.getElementById("speakBtn");
+
+    const stopButton =
+    document.getElementById("stopBtn");
+
+    const restartButton =
+    document.getElementById("restartBtn");
+
+    const loadingText =
+    document.getElementById("loadingText");
+
+    speakButton.disabled = false;
+
+    stopButton.style.display = "none";
+
+    restartButton.style.display = "none";
+
+    loadingText.style.display = "none";
+
+    isPaused = false;
+
+    currentAudio = null;
+}
+
+function copyText() {
+
+    const text =
+    document.getElementById("translatedText").innerText;
+
+    navigator.clipboard.writeText(text);
+
+    alert("Copied!");
+}
+
+function swapLanguages() {
+
+    const source =
+    document.querySelector('select[name="source_language"]');
+
+    const target =
+    document.querySelector('select[name="target_language"]');
+
+    let temp = source.value;
+
+    source.value = target.value;
+
+    target.value = temp;
+}
+
+</script>
+</body>
+
+</html>

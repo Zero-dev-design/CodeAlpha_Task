@@ -1,0 +1,91 @@
+Question,Answer
+What is Artificial Intelligence?,Artificial Intelligence is the simulation of human intelligence by machines.
+What is AI?,Artificial Intelligence is the simulation of human intelligence by machines.
+Explain AI,Artificial Intelligence enables machines to think and learn like humans.
+Define Artificial Intelligence,Artificial Intelligence is a branch of computer science focused on intelligent systems.
+Tell me about AI,Artificial Intelligence is technology that mimics human intelligence.
+What is Machine Learning?,Machine Learning is a subset of AI that learns from data.
+What is ML?,Machine Learning allows computers to improve automatically through experience.
+Explain Machine Learning,Machine Learning uses algorithms to learn patterns from data.
+Define Machine Learning,Machine Learning is a branch of AI focused on data-driven learning.
+Tell me about Machine Learning,Machine Learning helps systems make predictions using data.
+What is Deep Learning?,Deep Learning is a branch of machine learning based on neural networks.
+What is DL?,Deep Learning uses multi-layer neural networks to learn complex patterns.
+Explain Deep Learning,Deep Learning is commonly used in image recognition and AI systems.
+Define Deep Learning,Deep Learning is an advanced form of machine learning.
+Tell me about Deep Learning,Deep Learning powers technologies like voice assistants and self-driving cars.
+What is NLP?,NLP stands for Natural Language Processing.
+What is Natural Language Processing?,Natural Language Processing helps computers understand human language.
+Explain NLP,NLP combines linguistics and AI to process language data.
+Define NLP,NLP enables machines to understand and generate text.
+Tell me about NLP,NLP is used in chatbots translation and voice assistants.
+What is Python?,Python is a popular programming language used in AI and web development.
+Why is Python popular?,Python is popular because it is simple powerful and beginner friendly.
+What is Python used for?,Python is used for AI automation web development and data science.
+How to install Python?,Python can be installed from the official Python website.
+Is Python easy to learn?,Yes Python is considered one of the easiest programming languages.
+What is Data Science?,Data Science is the process of analyzing data to gain insights.
+Explain Data Science,Data Science combines statistics programming and analytics.
+Define Data Science,Data Science helps organizations make data-driven decisions.
+Tell me about Data Science,Data Science is widely used in business healthcare and AI.
+What is Computer Vision?,Computer Vision helps machines understand images and videos.
+Explain Computer Vision,Computer Vision enables image recognition and object detection.
+Define Computer Vision,Computer Vision is a field of AI focused on visual data.
+Tell me about Computer Vision,Computer Vision is used in self-driving cars and facial recognition.
+What is supervised learning?,Supervised learning uses labeled training data.
+Explain supervised learning,Supervised learning learns from known input and output examples.
+What is unsupervised learning?,Unsupervised learning finds patterns in unlabeled data.
+Explain unsupervised learning,Unsupervised learning groups and analyzes unknown data patterns.
+What is reinforcement learning?,Reinforcement learning learns using rewards and punishments.
+Explain reinforcement learning,Reinforcement learning is commonly used in robotics and gaming AI.
+What is a chatbot?,A chatbot is a software program that communicates with users.
+Explain chatbot,A chatbot interacts with humans using text or voice.
+Tell me about chatbots,Chatbots are widely used in customer support systems.
+What is neural network?,A neural network is a system inspired by the human brain.
+Explain neural networks,Neural networks process information using connected layers of nodes.
+What is TensorFlow?,TensorFlow is an open-source machine learning framework developed by Google.
+What is PyTorch?,PyTorch is a popular deep learning framework used in AI research.
+What is overfitting?,Overfitting happens when a model learns training data too well.
+Explain overfitting,Overfitting reduces a model's performance on new data.
+What is underfitting?,Underfitting happens when a model fails to learn patterns properly.
+What is dataset?,A dataset is a collection of related data used for analysis or training.
+What is big data?,Big data refers to extremely large and complex datasets.
+Explain big data,Big data technologies help process massive amounts of information.
+What is data mining?,Data mining is the process of discovering patterns in data.
+Explain data mining,Data mining extracts useful information from large datasets.
+What is cloud computing?,Cloud computing provides computing services over the internet.
+Explain cloud computing,Cloud computing allows remote storage and computing resources.
+What is automation?,Automation uses technology to perform tasks automatically.
+Explain automation,Automation improves efficiency and reduces manual work.
+What is robotics?,Robotics is the field involving intelligent machines and robots.
+Explain robotics,Robotics combines AI engineering and mechanics.
+What is algorithm?,An algorithm is a step-by-step procedure to solve problems.
+Explain algorithm,Algorithms are fundamental to programming and AI systems.
+What is programming?,Programming is the process of writing instructions for computers.
+What is coding?,Coding is writing computer instructions using programming languages.
+Explain coding,Coding allows developers to create software and applications.
+What is Java?,Java is a popular object-oriented programming language.
+What is C++?,C++ is a high-performance programming language.
+What is JavaScript?,JavaScript is a programming language mainly used for web development.
+What is API?,API stands for Application Programming Interface.
+Explain API,APIs allow software applications to communicate with each other.
+What is database?,A database stores organized information electronically.
+Explain database,Databases help manage and retrieve information efficiently.
+What is SQL?,SQL is a language used to manage databases.
+Explain SQL,SQL helps store retrieve and manipulate database information.
+What is cybersecurity?,Cybersecurity protects systems and data from digital attacks.
+Explain cybersecurity,Cybersecurity involves protecting networks devices and information.
+What is encryption?,Encryption converts data into secure coded form.
+Explain encryption,Encryption helps protect sensitive information.
+What is internet of things?,Internet of Things connects smart devices through the internet.
+Explain IoT,IoT allows devices to collect and exchange data automatically.
+What is virtual reality?,Virtual Reality creates immersive digital environments.
+Explain VR,Virtual Reality is widely used in gaming and simulations.
+What is augmented reality?,Augmented Reality overlays digital objects onto the real world.
+Explain AR,Augmented Reality enhances real-world experiences using technology.
+What is blockchain?,Blockchain is a decentralized digital ledger technology.
+Explain blockchain,Blockchain securely records transactions across multiple systems.
+What is generative AI?,Generative AI creates content like text images and music.
+Explain generative AI,Generative AI uses advanced models to generate new content.
+What is ChatGPT?,ChatGPT is an AI chatbot developed by OpenAI.
+Explain ChatGPT,ChatGPT generates human-like responses using large language models.
